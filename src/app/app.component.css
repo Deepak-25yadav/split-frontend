@@ -1,0 +1,55 @@
+
+.app-container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.left-sidebar {
+  width: 20%;
+  background-color: #343a40;
+  color: #ffffff;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  flex: 1;
+  width: 80%;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.left-sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.left-sidebar nav ul li {
+  margin: 15px 0;
+}
+
+.left-sidebar nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  display: block;
+  transition: background-color 0.3s ease;
+}
+
+.left-sidebar nav ul li a:hover {
+  background-color: #495057;
+  font-weight: bold;
+}
+
+.left-sidebar nav ul li a.active {
+  background-color: #007bff;
+  font-weight: bold;
+}
+
+
+
+

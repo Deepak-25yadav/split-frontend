@@ -1,0 +1,20 @@
+
+
+<div [ngClass]="{ 'app-container': isAuthenticated }">
+  <!-- Sidebar (Navbar) only shown when user is logged in -->
+  <div *ngIf="isAuthenticated" class="left-sidebar">
+    <app-navbar></app-navbar>
+  </div>
+
+  <!-- Main Content -->
+  <div [ngClass]="{ 'main-content': isAuthenticated }">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<!-- For non-authenticated pages -->
+<div *ngIf="!isAuthenticated">
+  <router-outlet></router-outlet>
+</div>
+
+

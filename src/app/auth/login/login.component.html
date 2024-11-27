@@ -1,0 +1,31 @@
+
+   <div class="login-container">
+    <div class="login-card">
+      <h2 class="login-title">Log in</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <label for="email">Email address</label>
+          <input
+            id="email"
+            formControlName="email"
+            placeholder="Enter your email"
+            required
+            type="email"
+          />
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            formControlName="password"
+            placeholder="Enter your password"
+            required
+            type="password"
+          />
+        </div>
+        <button type="submit" [disabled]="loading" class="login-button">
+          {{ loading ? 'Logging In...' : 'Log in' }}
+        </button>
+      </form>
+  </div>
+  

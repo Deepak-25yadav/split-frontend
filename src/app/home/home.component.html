@@ -1,0 +1,81 @@
+
+
+<div class="home2-container">
+    <!-- Background Pattern -->
+    <div class="background-pattern"></div>
+  
+    <div class="content-wrapper">
+      <!-- Navigation -->
+      <nav class="navbar">
+        <div class="logo-container">
+          <img
+            [src]="logoImage"
+            alt="Splitwise"
+            class="logo"
+          />
+          <span class="logo-text">Splitwise</span>
+        </div>
+        <div class="nav-links">
+          <a routerLink="/login" class="login-link">
+            Log in
+          </a>
+          <a routerLink="/signup" class="signup-button">
+            Sign up
+          </a>
+        </div>
+      </nav>
+  
+      <!-- Hero Section -->
+      <div class="hero-section">
+        <div class="hero-text">
+          <h1 class="headline">
+            Less stress when sharing expenses
+            <span class="headline-highlight">on trips.</span>
+          </h1>
+  
+          <div class="icon-group">
+            <div class="icon plane-icon">
+              <!-- Plane Icon -->
+              <fa-icon [icon]="faPlane"></fa-icon>
+              <!-- <img src="https://path-to-plane-icon.svg" alt="Plane Icon"> -->
+            </div>
+            <div class="icon home-icon">
+              <!-- Home Icon -->
+              <fa-icon [icon]="faHome"></fa-icon>
+              <!-- <img src="https://path-to-home-icon.svg" alt="Home Icon"> -->
+            </div>
+            <div class="icon heart-icon">
+              <!-- Heart Icon -->
+              <fa-icon [icon]="faHeart"></fa-icon>
+              <!-- <img src="https://path-to-heart-icon.svg" alt="Heart Icon"> -->
+            </div>
+            <div class="icon asterisk-icon">
+              <!-- Asterisk Icon -->
+              <fa-icon [icon]="faAsterisk"></fa-icon>
+              <!-- <img src="https://path-to-asterisk-icon.svg" alt="Asterisk Icon"> -->
+            </div>
+          </div>
+  
+          <p class="description">
+            Keep track of your shared expenses and balances with housemates, trips, groups, friends, and family.
+          </p>
+  
+          <button
+            class="cta-button"
+            (click)="redirectToSignup()"
+          >
+            Sign up
+          </button>
+        </div>
+  
+        <div class="hero-image-container">
+          <img
+            [src]="aeroplaneImage"
+            alt="Geometric Plane"
+            class="hero-image"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  
