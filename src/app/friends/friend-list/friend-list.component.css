@@ -1,0 +1,60 @@
+/* ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    padding: 5px 10px;
+    border-bottom: 1px solid #ccc;
+  } */
+  
+
+/* List Styling */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background-color: #e9f7fa;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #d1ecf1;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+li:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  border-color: #17a2b8;
+}
+
+/* No Friends Placeholder */
+p {
+  text-align: center;
+  /* font-size: 1rem;
+  color: #adb5bd; */
+  font-size: 2rem;
+  color: #15191d;
+  font-style: italic;
+  margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  li {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+}
+
+
+

@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { AuthService } from '../auth.service';
+
 import Swal from 'sweetalert2';
+
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,7 +14,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
+
   signupForm: FormGroup;
+
   loading = false;
 
   constructor(
@@ -25,12 +31,15 @@ export class SignupComponent {
     });
   }
 
+
+  
   onSubmit() {
     if (this.signupForm.invalid) {
       return;
     }
 
     this.loading = true;
+
     const userData = this.signupForm.value;
 
     this.authService.registerUser(userData).subscribe({

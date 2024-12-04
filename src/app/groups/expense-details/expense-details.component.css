@@ -1,0 +1,174 @@
+/* Main container for the expense details */
+
+
+.main-container-expense{
+    width: 80%;
+    margin: auto;
+}
+
+.expense-description {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Styling for the circular icon displaying the first letter of the name */
+  .created-by {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ff6f61; /* A pleasant color */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Total amount styling */
+  .total-amount {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 20px 0;
+  }
+  
+  /* Progress Bar styling */
+  .progress-bar-container {
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .progress-bar-background {
+    width: 100%;
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+  .progress-bar-foreground {
+    height: 10px;
+    background-color: #4caf50; /* Dark blue for paid */
+    border-radius: 5px 0 0 5px;
+  }
+  
+  .progress-bar-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+  
+  .paid-amount {
+    font-size: 1rem;
+    color: #4caf50; /* Dark blue for paid */
+  }
+  
+  .remaining-amount {
+    font-size: 1rem;
+    color: #ff6f61; /* Red for remaining */
+  }
+  
+  /* Divider line */
+  .divider {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+  }
+  
+  /* Payment status text and button */
+  .payment-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .payment-status span {
+    font-size: 1rem;
+  }
+  
+  .send-reminder {
+    padding: 8px 16px;
+    background-color: #ff6f61;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .send-reminder:hover {
+    background-color: #e55f4d;
+  }
+  
+  /* Group members list styling */
+  .group-members ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .group-member {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .group-member .circle {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .member-name {
+    flex: 1;
+    
+  }
+  
+  .payment-status-text {
+    color: #888;
+    margin-right: 50px;
+  }
+  
+  .payment-amount {
+    font-weight: bold;
+  }
+  
+
+
+  /* Styling for the Pay button */
+.pay-button {
+    padding: 8px 12px;
+    background-color: #26c6da; /* Green for action */
+    border: none;
+    color: white;
+    /* font-size: 1rem; */
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px; 
+  }
+  
+  .pay-button:hover {
+    background-color: #3e8e41; /* Darker green on hover */
+  }
+  
+  /* Aligning the Pay button in the same row as unpaid status */
+  .group-member {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .payment-status-text {
+    margin-right: 20px; /* Space between unpaid status and Pay button */
+  }
+  

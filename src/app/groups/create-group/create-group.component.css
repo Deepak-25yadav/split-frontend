@@ -1,0 +1,171 @@
+
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f9fc;
+  }
+  
+  /* Container for Input Group */
+  .input-group {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #d1ecf1;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 1.2rem;
+    color: #17a2b8;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .input-group input:focus {
+    border-color: #17a2b8;
+    box-shadow: 0 0 8px rgba(23, 162, 184, 0.5);
+  }
+  
+  /* Selected Friends Section */
+  .selected-friends {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    color: #333;
+    padding: 10px 20px;
+    background-color: #e9f7fa;
+    border: 1px solid #bde5ea;
+    border-radius: 8px;
+  }
+  
+  .selected-friends p {
+    margin: 0;
+    font-weight: bold;
+    color: #17a2b8;
+  }
+  
+  /* Create Group Button */
+  button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: #17a2b8;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    width: fit-content;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  button:hover {
+    background-color: #138496;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  button:disabled {
+    background-color: #b0bec5;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  /* Friend List Section */
+  .friend-list {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #d1ecf1;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .friend-list h3 {
+    font-size: 1.5rem;
+    color: #17a2b8;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+  
+  .friend-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .friend-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e9f7fa;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border: 1px solid #bde5ea;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .friend-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .friend-list input[type="checkbox"] {
+    transform: scale(1.2);
+    margin-right: 10px;
+    accent-color: #17a2b8;
+  }
+  
+  /* No Friends Placeholder */
+  .friend-list p {
+    font-size: 1rem;
+    color: #495057;
+    text-align: center;
+    margin: 10px 0;
+    font-style: italic;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .input-group,
+    .friend-list,
+    .selected-friends {
+      padding: 15px;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 10px 15px;
+    }
+  
+    .friend-list li {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+  

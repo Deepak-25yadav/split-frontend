@@ -1,0 +1,111 @@
+
+/* General Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f9fc;
+  padding: 20px;
+}
+
+/* Input Group Styling */
+.input-group {
+  margin-bottom: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d1ecf1;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #17a2b8;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #17a2b8;
+  box-shadow: 0 0 6px rgba(23, 162, 184, 0.5);
+}
+
+.input-group input::placeholder {
+  color: #adb5bd;
+  font-style: italic;
+}
+
+/* Add Friend Button */
+button {
+  display: block;
+  width: fit-content;
+  margin: 20px auto;
+  background-color: #17a2b8;
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s, box-shadow 0.3s;
+}
+
+button:hover {
+  background-color: #138496;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+button:disabled {
+  background-color: #adb5bd;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Friend List Component Wrapper */
+app-friend-list {
+  display: block;
+  margin-top: 30px;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d1ecf1;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .input-group {
+    padding: 15px;
+  }
+
+  .input-group input {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  button {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
+
+

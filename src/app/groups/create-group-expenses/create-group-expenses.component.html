@@ -1,0 +1,267 @@
+
+  <div>
+    <h2>Create Group Expense</h2>
+  
+    <form (submit)="createExpense($event)">
+
+      <div>
+        <label for="totalAmount">Total Amount:</label>
+
+        <input
+          type="number"
+          id="totalAmount"
+          [(ngModel)]="totalAmount"
+          name="totalAmount"
+          required
+          (input)="calculatePaymentAmounts()"
+        />
+
+      </div>
+
+  
+
+      <div>
+        <label for="expenseDescription">Expense Description:</label>
+
+        <input
+          type="text"
+          id="expenseDescription"
+          [(ngModel)]="expenseDescription"
+          name="expenseDescription"
+          required
+        />
+
+      </div>
+  
+      
+
+
+
+      <div>
+
+        <button
+          type="button"
+          [class.active]="splitMethod === 'evenly'"
+          (click)="setSplitMethod('evenly')"
+        >
+          Split-evenly
+        </button>
+
+
+        <button
+          type="button"
+          [class.active]="splitMethod === 'unevenly'"
+          (click)="setSplitMethod('unevenly')"
+        >
+          Split-unevenly
+        </button>
+
+
+        <button
+          type="button"
+          [class.active]="splitMethod === 'by-share'"
+          (click)="setSplitMethod('by-share')"
+        >
+          Split-by-share
+        </button>
+
+
+        <button
+          type="button"
+          [class.active]="splitMethod === 'by-percentage'"
+          (click)="setSplitMethod('by-percentage')"
+        >
+          Split-by-percentage
+        </button>
+
+      </div>
+      
+
+       
+      <h3 class="group-members">Group Members</h3>
+     
+      
+
+
+      <div class="split-div" *ngIf="splitMethod === 'evenly'">
+        
+        <ul>
+          <li *ngFor="let member of groupMembers; let i = index">
+
+            <input
+              type="checkbox"
+              [(ngModel)]="member.selected"
+              name="memberCheckbox{{ i }}"
+              (change)="calculatePaymentAmounts()"
+            />
+
+            {{ member.name }} ({{ member.email }}) - Payment Amount: ₹{{ member.paymentAmount }}
+
+            <label>
+
+              <input
+                type="checkbox"
+                [(ngModel)]="member.paymentStatus"
+                name="paymentStatusToggle{{ i }}"
+              />
+              Paid
+            </label>
+
+          </li>
+
+        </ul>
+
+      </div>
+  
+
+
+
+
+
+      <div *ngIf="splitMethod === 'unevenly'">
+        
+        <ul>
+
+          <li *ngFor="let member of groupMembers; let i = index">
+
+            <input
+              type="checkbox"
+              [(ngModel)]="member.selected"
+              name="memberCheckbox{{ i }}"
+              (change)="calculateUnevenSplit()"
+            />
+
+            {{ member.name }} ({{ member.email }})
+
+            <input
+              *ngIf="member.selected"
+              type="number"
+              [(ngModel)]="member.paymentAmount"
+              name="memberAmount{{ i }}"
+              placeholder="Enter amount"
+              (input)="calculateUnevenSplit()"
+            />
+
+            <label> 
+              <input
+                type="checkbox"
+                [(ngModel)]="member.paymentStatus"
+                name="paymentStatusToggle{{ i }}"
+              />
+              Paid
+            </label>
+
+          </li>
+
+        </ul>
+      </div>
+  
+
+
+
+
+
+
+      <div *ngIf="splitMethod === 'by-share'">
+        
+        <ul>
+
+          <li *ngFor="let member of groupMembers; let i = index">
+
+            <input
+              type="checkbox"
+              [(ngModel)]="member.selected"
+              name="memberCheckbox{{ i }}"
+              (change)="calculateShareSplit()"
+            />
+
+            {{ member.name }} ({{ member.email }})
+
+            <div *ngIf="member.selected">
+              Share: <input
+                type="number"
+                [(ngModel)]="member.share"
+                name="memberShare{{ i }}"
+                placeholder="Enter share"
+                (input)="calculateShareSplit()"
+              />
+
+              - Split Amount: ₹{{ member.paymentAmount }}
+
+            </div>
+
+
+            <label>
+              <input
+                type="checkbox"
+                [(ngModel)]="member.paymentStatus"
+                name="paymentStatusToggle{{ i }}"
+              />
+              Paid
+            </label>
+
+          </li>
+
+        </ul>
+      </div>
+
+
+
+
+  
+
+
+
+      <div *ngIf="splitMethod === 'by-percentage'">
+
+        <ul>
+
+          <li *ngFor="let member of groupMembers; let i = index">
+
+            <input
+              type="checkbox"
+              [(ngModel)]="member.selected"
+              name="memberCheckbox{{ i }}"
+              (change)="calculatePercentageSplit()"
+            />
+
+            {{ member.name }} ({{ member.email }})
+
+            <div *ngIf="member.selected">
+              Percentage: <input
+                type="number"
+                [(ngModel)]="member.percentage"
+                name="memberPercentage{{ i }}"
+                placeholder="Enter percentage"
+                (input)="calculatePercentageSplit()"
+              />
+
+              - Split Amount: ₹{{ member.paymentAmount }}
+
+            </div>
+
+
+            <label>
+              <input
+                type="checkbox"
+                [(ngModel)]="member.paymentStatus"
+                name="paymentStatusToggle{{ i }}"
+              />
+              Paid
+            </label>
+
+
+          </li>
+
+        </ul>
+      </div>
+  
+
+
+      <button type="submit">Submit Expense</button>
+    </form>
+    
+  </div>
+  
+
+

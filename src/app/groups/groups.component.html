@@ -1,1 +1,32 @@
-<p>groups works!</p>
+
+ <div *ngIf="errorMessage" class="error">
+
+  {{ errorMessage }}
+  
+</div>
+
+<div class="groups-container">
+
+  <div
+    *ngFor="let group of groups"
+    class="group-item"
+    (click)="viewGroupDetails(group.groupId)"
+  >
+
+    <h3>{{ group.groupName }}</h3>
+    <p>Created by: {{ group.groupCreated.name }}</p>
+
+
+  </div>
+
+</div>
+
+<div class="sticky-button-container">
+
+  <button routerLink="/groups/create">Create new group</button>
+
+</div>
+
+
+
+

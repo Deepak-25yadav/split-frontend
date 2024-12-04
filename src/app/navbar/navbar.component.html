@@ -1,12 +1,35 @@
 
-  <nav>
+   <nav class="sidebar">
     <ul>
-      <li><a routerLink="/groups" routerLinkActive="active">Groups</a></li>
-      <li><a routerLink="/friends" routerLinkActive="active">Friends</a></li>
-      <li><a routerLink="/accounts" routerLinkActive="active">Account</a></li>
-      <li><a (click)="logout()">Logout</a></li>
+
+      <li>
+        <div class="icon"><fa-icon [icon]="['fas', 'users']"></fa-icon></div>
+        <a routerLink="/groups" routerLinkActive="active">Groups</a>
+      </li>
+      
+
+      <li>
+        <div class="icon"><fa-icon [icon]="['fas', 'user-friends']"></fa-icon></div>
+        <a routerLink="/friends" routerLinkActive="active">Friends</a>
+      </li>
+
+
+      <li>
+        <div class="icon"><fa-icon [icon]="['fas', 'user-circle']"></fa-icon></div>
+        <a routerLink="/accounts" routerLinkActive="active">Account</a>
+      </li>
+
+
+      <li>
+        <div class="icon"><fa-icon [icon]="['fas', 'sign-out-alt']"></fa-icon></div>
+        <a (click)="logout()">Logout</a>
+      </li>
+
+
     </ul>
   </nav>
+
+  <!-- <router-outlet></router-outlet> -->
   
 
 

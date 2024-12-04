@@ -1,0 +1,54 @@
+ <div class="input-group">
+
+    <label for="createGroup">Enter your group's name</label>
+
+    <input
+      id="createGroup"
+      [(ngModel)]="groupName"
+      placeholder="Enter your group's name"
+      required
+      type="text"
+    />
+
+  </div>
+
+  
+  <div class="selected-friends">
+    <p><strong>Selected Friends:</strong> {{ getSelectedFriendNames() }}</p>
+  </div>
+  
+
+  <button (click)="createGroup()" [disabled]="loading">
+    {{ loading ? "Creating Group..." : "Create Group" }}
+  </button>
+  
+
+
+
+
+  <div class="friend-list">
+    <h3>Your Friends:</h3>
+
+    <ul *ngIf="friends && friends.length > 0; else noFriends">
+
+      <li *ngFor="let friend of friends">
+        <input
+          type="checkbox"
+          [checked]="selectedFriends.includes(friend)"
+          (change)="onCheckboxChange(friend, $event)"
+        />
+
+        <span>{{ friend.name }} - {{ friend.email }}</span>
+
+      </li>
+    </ul>
+  
+    
+    <ng-template #noFriends>
+      <p>No friends found. Add some!</p>
+    </ng-template>
+
+  </div>
+  
+
+

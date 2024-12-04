@@ -1,6 +1,6 @@
 
-
 import { Component } from '@angular/core';
+
 import { AuthService } from './auth/auth.service';
 
 @Component({
@@ -9,12 +9,17 @@ import { AuthService } from './auth/auth.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'split-frontend';
+
   isAuthenticated = false;
 
   constructor(private authService: AuthService) {
+
     this.authService.isAuth.subscribe((status) => {
+
       this.isAuthenticated = status;
+
     });
   }
 }

@@ -1,1 +1,25 @@
-<p>friends works!</p>
+
+<div class="input-group">
+
+  <label for="email">Enter your friend's email</label>
+  
+  <input
+    id="email"
+    [(ngModel)]="friendEmail"
+    placeholder="Enter your friend's email"
+    required
+    type="email"
+  />
+
+</div>
+
+<button (click)="addFriend()" [disabled]="loading">
+  {{ loading ? 'Adding...' : 'Add Friend' }}
+</button>
+
+
+<app-friend-list></app-friend-list>
+
+
+
+

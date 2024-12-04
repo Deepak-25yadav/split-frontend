@@ -1,0 +1,84 @@
+
+ <div *ngIf="errorMessage" class="error">
+
+    {{ errorMessage }}
+
+  </div>
+  
+  <div class="main-container-expense" *ngIf="expenseDetails">
+
+    
+    <h2 class="expense-description">{{ expenseDetails.expenseDescription }}</h2>
+  
+    
+    <div class="created-by">
+      <div class="circle">{{ expenseDetails.expenseCreatedBy.name[0].toUpperCase() }}</div>
+    </div>
+
+  
+    
+    <h2 class="total-amount">₹{{ expenseDetails.totalAmount }}</h2>
+  
+    
+
+    
+    <div class="progress-bar-container">
+
+      <div class="progress-bar-background">
+        <div class="progress-bar-foreground" [style.width]="calculatePaidPercentage() + '%'"></div>
+      </div>
+
+      <div class="progress-bar-text">
+        <span class="paid-amount">₹{{ totalPaid }}</span>
+        <span class="remaining-amount">₹{{ totalRemaining }}</span>
+      </div>
+
+    </div>
+  
+
+    <!-- Horizontal Line -->
+    <hr class="divider">
+  
+    
+    <div class="payment-status">
+
+      <span>{{ paidCount }} of {{ totalMembers }} paid</span>
+
+      <button class="send-reminder" (click)="sendReminder()">Send Reminder</button>
+
+    </div>
+  
+
+
+
+    <!-- Group Members -->
+    <div class="group-members">
+
+      <ul>
+
+        <li *ngFor="let member of expenseDetails.groupMembers" class="group-member">
+
+          <div class="circle">{{ member.name[0].toUpperCase() }}</div>
+
+          <span class="member-name">{{ member.name }}</span>
+
+          <button *ngIf="!member.paymentStatus && isCurrentUser(member._id)" 
+                  class="pay-button" 
+                  (click)="confirmPayment(member._id)">
+            Pay
+          </button>
+
+          <span class="payment-status-text">{{ member.paymentStatus ? 'Paid' : 'Unpaid' }}</span>
+
+          <span class="payment-amount">₹{{ member.paymentAmount }}</span>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+  
+
+

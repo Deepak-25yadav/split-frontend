@@ -1,1 +1,16 @@
-<p>friend-list works!</p>
+
+<p>Friends in your contact:</p>
+
+<ul *ngIf="friends && friends.length > 0; else noFriends">
+
+  <li *ngFor="let friend of friends">
+    {{ friend.name }} - {{ friend.email }} 
+    <!-- - {{friend._id}} -->
+  </li>
+  
+</ul>
+
+<ng-template #noFriends>
+  <p>No friends found. Add some!</p>
+</ng-template>
+

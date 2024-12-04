@@ -1,0 +1,65 @@
+ <div *ngIf="errorMessage" class="error">
+
+  {{ errorMessage }}
+
+</div>
+
+<div *ngIf="groupDetails">
+
+  <h2>{{ groupDetails.groupName }}</h2>
+
+  <p><strong>Created by:</strong> {{ groupDetails.groupCreated.name }} ({{ groupDetails.groupCreated.email }})</p>
+
+  <p><strong>Created at:</strong> {{ groupDetails.createdAt | date }}</p>
+
+
+  <h3>Group Members:</h3>
+
+  <ul>
+
+    <li *ngFor="let member of groupDetails.groupMembers">
+      {{ member.name }} ({{ member.email }})
+    </li>
+
+  </ul>
+</div>
+
+
+<div *ngIf="expenses.length > 0">
+
+  <h2>Group Expenses</h2>
+
+  <div *ngFor="let expense of expenses" class="expense-item">
+
+    <h2>{{ expense.expenseDescription }}</h2>
+
+    <h3>Expense ID: {{ expense._id }}</h3>
+
+    <h3>Total Amount: ₹{{ expense.totalAmount }}</h3>
+    <p>
+      <strong>Created by:</strong>
+      {{ expense.expenseCreatedBy.name }} ({{ expense.expenseCreatedBy.email }})
+    </p>
+
+    <p>
+      <strong>Group Members:</strong>
+
+      <span *ngFor="let member of expense.groupMembers; let last = last">
+        {{ member.name }}<span *ngIf="!last">, </span>
+      </span>
+
+    </p>
+    
+    <button [routerLink]="['/groups/expense-details', expense._id]">View Expense Details</button>
+
+  </div>
+</div>
+
+<div *ngIf="expenses.length === 0 && !errorMessage">
+  <p>No expenses found for this group.</p>
+</div>
+
+
+<div class="sticky-button-container">
+  <button [routerLink]="['/groups/create-expenses', groupDetails._id]">Create Group Expense</button>
+</div>

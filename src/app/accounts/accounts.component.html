@@ -1,1 +1,25 @@
-<p>accounts works!</p>
+
+<div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+  
+
+  <div *ngIf="userData">
+
+    <h2>User Details</h2>
+
+    <p><strong>Name:</strong> {{ userData.name }}</p>
+
+    <p><strong>Email:</strong> {{ userData.email }}</p>
+
+    <p><strong>User ID:</strong> {{ userData._id }}</p>
+
+    <p><strong>Created At:</strong> {{ userData.createdAt | date:'medium' }}</p>
+
+  </div>
+  
+  
+  <div *ngIf="!userData && !errorMessage" class="loading">
+    <p>Loading user details...</p>
+  </div>
+  

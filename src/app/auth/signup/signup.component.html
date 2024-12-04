@@ -1,9 +1,14 @@
 
 
 <div class="signup-container">
+
     <div class="signup-card">
+
       <h2 class="signup-title">Sign up</h2>
+
       <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+        
         <div class="input-group">
           <label for="name">Full Name</label>
           <input
@@ -14,6 +19,8 @@
             type="text"
           />
         </div>
+
+
         <div class="input-group">
           <label for="email">Email address</label>
           <input
@@ -24,6 +31,8 @@
             type="email"
           />
         </div>
+
+
         <div class="input-group">
           <label for="password">Password</label>
           <input
@@ -34,9 +43,13 @@
             type="password"
           />
         </div>
+
+
         <button type="submit" [disabled]="loading" class="signup-button">
           {{ loading ? 'Signing Up...' : 'Sign up' }}
         </button>
+
+
       </form>
     </div>
   </div>

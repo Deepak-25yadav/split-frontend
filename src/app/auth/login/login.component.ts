@@ -1,8 +1,12 @@
 
 import { Component } from '@angular/core';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { AuthService } from '../auth.service';
+
 import { Router, ActivatedRoute } from '@angular/router';
+
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,8 +14,11 @@ import Swal from 'sweetalert2';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent {
+
   loginForm: FormGroup;
+
   loading = false;
 
   constructor(
@@ -26,13 +33,17 @@ export class LoginComponent {
     });
   }
 
+
   onSubmit() {
     if (this.loginForm.invalid) {
       return;
     }
 
+
     this.loading = true;
+
     const credentials = this.loginForm.value;
+
 
     this.authService.loginUser(credentials).subscribe({
       next: (response) => {
@@ -48,6 +59,7 @@ export class LoginComponent {
 
           const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/groups';
           this.router.navigate([returnUrl]);
+          
         });
       },
       error: (error) => {
