@@ -20,6 +20,30 @@
   margin-top: 20px;
 }
 
+
+/* No Groups Available Styling */
+.group-item-not-available {
+  color: #6c757d; /* Subtle gray color */
+  font-size: 1.8rem; /* Large font size for readability */
+  font-weight: 500; /* Medium weight for text */
+  text-align: center; /* Center the text */
+  margin-top: 50px; /* Add spacing above */
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background to stand out */
+  border: 1px solid #e0e0e0; /* Light border for definition */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  width: 90%; /* Responsive width */
+  max-width: 600px; /* Maximum width */
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6; /* Improve spacing between lines */
+}
+
+
+
+
+
 /* Individual Group Item */
 .group-item {
   display: flex;

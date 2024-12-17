@@ -11,11 +11,12 @@ export class AccountsService {
   constructor(private http:HttpClient) { }
 
 getUserDetails(){
-  const token = localStorage.getItem('token');
-  const headers = new HttpHeaders({
-    Authorization: `Bearer ${token}`
-  })
-  return this.http.get(`${this.apiUrl}`, { headers });
+  // const token = localStorage.getItem('token');
+  // const headers = new HttpHeaders({
+  //   Authorization: `Bearer ${token}`
+  // })
+  
+  return this.http.get(`${this.apiUrl}`);
 }
 
 }

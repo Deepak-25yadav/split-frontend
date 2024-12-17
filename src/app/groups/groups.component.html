@@ -6,16 +6,19 @@
 </div>
 
 <div class="groups-container">
+  
+  <p class="group-item-not-available" *ngIf="groups.length === 0">
+    No groups have been created yet. Start by creating your first group and make managing your expenses easier!
+  </p>
+  
 
   <div
     *ngFor="let group of groups"
     class="group-item"
     (click)="viewGroupDetails(group.groupId)"
   >
-
     <h3>{{ group.groupName }}</h3>
     <p>Created by: {{ group.groupCreated.name }}</p>
-
 
   </div>
 

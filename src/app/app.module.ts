@@ -17,7 +17,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -32,6 +32,7 @@ import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 
 import { faUsers, faUserFriends, faUserCircle, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
 
 
 
@@ -64,7 +65,7 @@ import { faUsers, faUserFriends, faUserCircle, faSignOutAlt } from '@fortawesome
     
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [{provide: HTTP_INTERCEPTORS, useClass:AuthInterceptor, multi:true}],
   bootstrap: [AppComponent],
 })
 export class AppModule {
@@ -74,7 +75,5 @@ export class AppModule {
   }
 
 }
-
-
 
 

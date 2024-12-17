@@ -57,7 +57,7 @@ export class GroupDetailsComponent implements OnInit {
         console.log('Group Expenses:', this.expenses);
       },
       (error) => {
-        this.errorMessage = 'Failed to fetch group expenses. Please try again.';
+        this.errorMessage = 'No group expenses found. Start by creating a new group expense and simplify your expense management!';
         console.error(error);
       }
     );

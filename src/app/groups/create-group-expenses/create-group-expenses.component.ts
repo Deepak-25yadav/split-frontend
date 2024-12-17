@@ -87,6 +87,7 @@ export class CreateGroupExpensesComponent implements OnInit {
 
     if (method === 'evenly') {
 
+      
       this.calculatePaymentAmounts();
 
     } else if (method === 'unevenly') {
