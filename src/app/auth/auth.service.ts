@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,11 @@ export class AuthService {
 
   private isAuthenticated$ = new BehaviorSubject<boolean>(!!localStorage.getItem('token'));
   
-  private baseUrl = 'https://split-backend-zy86.onrender.com/api/user';
+private BaseUrl= environment.baseUrl
+
+private baseUrl = `${this.BaseUrl}/user`
+
+  // private baseUrl = 'https://split-backend-zy86.onrender.com/api/user';
 
   constructor(private http: HttpClient, private router:Router) {}
 

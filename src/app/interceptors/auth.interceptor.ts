@@ -1,5 +1,7 @@
 
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
 import {
   HttpInterceptor,
   HttpRequest,
@@ -11,9 +13,12 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  
+
+ private baseUrl= environment.baseUrl
+
   private excludedUrls: string[] = [
     // 'https://split-backend-zy86.onrender.com/api/user/friends' 
+    // `${this.baseUrl}/user/friends`
   ];
 
   constructor(private httpBackend: HttpBackend) {}
