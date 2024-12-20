@@ -39,6 +39,7 @@ export class CreateGroupComponent implements OnInit {
     };
 
     this.loading = true;
+    
     this.groupsService.createGroup(groupPayload, token).subscribe({
       next: () => {
         this.loading = false;

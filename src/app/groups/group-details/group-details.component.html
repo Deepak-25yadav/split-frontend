@@ -60,6 +60,6 @@
 </div>
 
 
-<div class="sticky-button-container">
+<div class="sticky-button-container" *ngIf="groupDetails?._id">
   <button [routerLink]="['/groups/create-expenses', groupDetails._id]">Create Group Expense</button>
 </div>
